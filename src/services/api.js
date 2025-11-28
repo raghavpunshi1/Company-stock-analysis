@@ -1,8 +1,8 @@
-const API_BASE_URL = 'http://localhost:8080/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
 
 export const analyzeStock = async (companyName) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/stockMarketAI/analyseCompany`, {
+    const response = await fetch(`${API_BASE_URL}api/stockMarketAI/analyseCompany`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
